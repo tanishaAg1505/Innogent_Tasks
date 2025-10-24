@@ -3,43 +3,58 @@ package com.assignment.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import com.assignment.DTO.StudentRequestDTO;
+import com.assignment.DTO.StudentResponseDTO;
 import com.assignment.Service.StudentService;
-import com.assignment.model.Student;
 
 @RestController
-@RequestMapping("/Students")
+@RequestMapping("/students")
 public class StudentController {
-	
-	@Autowired
-	private StudentService studentService;
 
-	@PostMapping
-	public Student addStudents(@RequestBody Student student) {
-		return studentService.addStudent(student);
-	}
-	
-	@GetMapping
-	public List<Student> getAllStudents(){
-		return studentService.getAllStudents();
-	}
-	 
-	@PutMapping("/{id}")
-	public Student updateStudent(@PathVariable int id , @RequestBody Student student) {
-		return studentService.updateStudent(id, student);
-	}
-	
-	@DeleteMapping("/{id}")
-	public void deleteStudent(@PathVariable int id) {
-		studentService.deleteStudent(id);
-	}
-	
+    @Autowired
+    private StudentService studentService;
+
+    // Create student
+    @PostMapping
+    public StudentResponseDTO addStudent(@RequestBody StudentRequestDTO dto) {
+        return studentService.addStudent(dto);
+    }
+
+    // Get all students
+    @GetMapping
+    public List<StudentResponseDTO> getAllStudents() {
+        return studentService.getAllStudents();
+    }
+
+    // Update student
+    @PutMapping("/{id}")
+    public StudentResponseDTO updateStudent(@PathVariable int id, @RequestBody StudentRequestDTO dto) {
+        return studentService.updateStudent(id, dto);
+    }
+
+    // Delete student
+    @DeleteMapping("/{id}")
+    public void deleteStudent(@PathVariable int id) {
+        studentService.deleteStudent(id);
+    }
+
+    // Get students by course name
+    @GetMapping("/by-course")
+    public List<StudentResponseDTO> getStudentsByCourse(@RequestParam String courseName) {
+        return studentService.getStudentsByCourseName(courseName);
+    }
+
+    // Get students without course
+    @GetMapping("/without-course")
+    public List<StudentResponseDTO> getStudentsWithoutCourse() {
+        return studentService.getStudentsWithoutCourse();
+    }
+
+    // Search students by city and instructor
+    @GetMapping("/search")
+    public List<StudentResponseDTO> searchStudents(@RequestParam String city, @RequestParam String instructor) {
+        return studentService.searchStudents(city, instructor);
+    }
 }
