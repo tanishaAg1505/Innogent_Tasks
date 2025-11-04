@@ -1,0 +1,133 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #c1f0c1, #a7c7ff);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+/* === App container === */
+.app-container {
+  max-width: 420px;
+  margin: 40px auto;
+  background: #e6a596;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  border: 2px;
+  color: #2d3436;
+  margin-bottom: 20px;
+  font-size: 28px;
+  border-bottom: 2px dashed #a7c7ff;
+  padding-bottom: 8px;
+}
+
+/* === Add Task Section === */
+.add-task {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #74b9ff;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.add-task input:focus {
+  border-color: #0984e3;
+}
+
+.add-task button {
+  background: #74b9ff;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-task button:hover {
+  background: #0984e3;
+}
+
+/* === Task List === */
+.task-list {
+  margin-top: 20px;
+}
+
+.task-item {
+  background: #f1f2f6;
+  border: 1px solid #dfe6e9;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-item p {
+  margin: 0;
+  color: #2d3436;
+  font-weight: 500;
+}
+
+/* === Buttons inside each task === */
+.task-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.task-buttons button {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.task-buttons .edit {
+  background: #ffeaa7;
+}
+
+.task-buttons .edit:hover {
+  background: #fdcb6e;
+}
+
+.task-buttons .delete {
+  background: #fab1a0;
+}
+
+.task-buttons .delete:hover {
+  background: #e17055;
+  color: white;
+}
+
+/* === Empty message === */
+.empty {
+  text-align: center;
+  color: #636e72;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+/* === Edit input field === */
+.edit-input {
+  flex: 1;
+  margin-right: 10px;
+  border: 1px solid #b2bec3;
+  padding: 6px;
+  border-radius: 6px;
+}
