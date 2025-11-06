@@ -1,0 +1,55 @@
+.product-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.details-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+ padding: 20px 30px;
+ background-color: rgb(216, 233, 239);
+}
+
+.details-info {
+  max-width: 500px;
+}
+
+.details-info h2 {
+  margin-bottom: 10px;
+  font-family:'Times New Roman', Times, serif;
+ 
+  font-size: 30px;
+}
+
+.category {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  font-weight: bold;
+  color:rgb(240, 167, 32);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.description {
+  color: #666;
+  margin: 10px 0;
+}
+
+.add-to-cart {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
