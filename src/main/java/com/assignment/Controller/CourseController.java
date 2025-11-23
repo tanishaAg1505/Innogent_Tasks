@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.assignment.DTO.CourseRequestDTO;
 import com.assignment.DTO.CourseResponseDTO;
 import com.assignment.model.Course;
 import com.assignment.Service.CourseService;
@@ -15,6 +16,11 @@ public class CourseController {
 
     @Autowired
     private CourseService courseService;
+    
+    @PostMapping
+    public CourseResponseDTO create(@RequestBody CourseRequestDTO req) {
+        return courseService.create(req);
+        		}
 
     @PutMapping("/{id}/instructor")
     public Course updateInstructor(@PathVariable int id, @RequestParam String instructor) {

@@ -15,7 +15,7 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
-
+ 
     // Create student
     @PostMapping
     public StudentResponseDTO addStudent(@RequestBody StudentRequestDTO dto) {
